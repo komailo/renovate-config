@@ -8,6 +8,7 @@
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
+      "platformAutomerge": true,
       "autoApprove": true,
       "bumpVersion": "patch",
       "addLabels": ["patch"]
@@ -17,6 +18,7 @@
       "matchUpdateTypes": ["minor"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
+      "platformAutomerge": true,
       "autoApprove": true,
       "bumpVersion": "patch",
       "addLabels": ["patch"]
@@ -26,6 +28,7 @@
       "matchUpdateTypes": ["major"],
       "matchCurrentVersion": "!/^0/",
       "automerge": false,
+      "platformAutomerge": true,
       "autoApprove": false,
       "bumpVersion": "major",
       "addLabels": ["major"]
