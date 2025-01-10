@@ -20,15 +20,15 @@
       "automerge": true,
       "platformAutomerge": true,
       "autoApprove": true,
-      "bumpVersion": "patch",
-      "addLabels": ["patch"]
+      "bumpVersion": "minor",
+      "addLabels": ["minor"]
     },
     {
       "groupName": "Disable auto merge on major updates",
       "matchUpdateTypes": ["major"],
       "matchCurrentVersion": "!/^0/",
       "automerge": false,
-      "platformAutomerge": true,
+      "platformAutomerge": false,
       "autoApprove": false,
       "bumpVersion": "major",
       "addLabels": ["major"]
