@@ -1,6 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:best-practices"],
+  "extends": [
+    "config:best-practices"
+    ":assignee(komailo)",
+    ":reviewer(komailo)"
+  ]
+  ],
   "labels": ["dependencies"],
   "packageRules": [
     {
@@ -8,7 +13,6 @@
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
-      "platformAutomerge": true,
       "autoApprove": true,
       "bumpVersion": "patch",
       "addLabels": ["patch"]
@@ -18,7 +22,6 @@
       "matchUpdateTypes": ["minor"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
-      "platformAutomerge": true,
       "autoApprove": true,
       "bumpVersion": "minor",
       "addLabels": ["minor"]
@@ -28,8 +31,6 @@
       "matchUpdateTypes": ["major"],
       "matchCurrentVersion": "!/^0/",
       "automerge": false,
-      "platformAutomerge": false,
-      "autoApprove": false,
       "bumpVersion": "major",
       "addLabels": ["major"]
     }
