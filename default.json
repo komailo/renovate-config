@@ -1,6 +1,37 @@
 {
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": [
-		"github>komailo/renovate-config:org-inherited-config.json"
-	]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    ":assignee(komailo)",
+    ":reviewer(komailo)"
+  ],
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "groupName": "Auto merge patch and no-op updates",
+      "matchUpdateTypes": ["patch", "pin", "digest"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true,
+      "autoApprove": true,
+      "bumpVersion": "patch",
+      "addLabels": ["patch"]
+    },
+    {
+      "groupName": "Auto merge minor updates",
+      "matchUpdateTypes": ["minor"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true,
+      "autoApprove": true,
+      "bumpVersion": "minor",
+      "addLabels": ["minor"]
+    },
+    {
+      "groupName": "Disable auto merge on major updates",
+      "matchUpdateTypes": ["major"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": false,
+      "bumpVersion": "major",
+      "addLabels": ["major"]
+    }
+  ]
 }
