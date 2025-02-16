@@ -5,11 +5,18 @@
     ":assignee(komailo)",
     ":reviewer(komailo)"
   ],
-  "labels": ["dependencies"],
+  "labels": ["dependencies", "renovate"],
   "packageRules": [
     {
-      "groupName": "Auto merge patch and no-op updates",
-      "matchUpdateTypes": ["patch", "pin", "digest"],
+      "groupName": "No-op updates",
+      "matchUpdateTypes": ["digest", "pin", "pinDigest"],
+      "automerge": true,
+      "autoApprove": true,
+      "addLabels": ["no-op"]
+    },
+    {
+      "groupName": "Patch update",
+      "matchUpdateTypes": ["patch"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
       "autoApprove": true,
@@ -17,7 +24,7 @@
       "addLabels": ["patch"]
     },
     {
-      "groupName": "Auto merge minor updates",
+      "groupName": "Minor updates",
       "matchUpdateTypes": ["minor"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
@@ -26,7 +33,7 @@
       "addLabels": ["minor"]
     },
     {
-      "groupName": "Disable auto merge on major updates",
+      "groupName": "Major updates",
       "matchUpdateTypes": ["major"],
       "matchCurrentVersion": "!/^0/",
       "automerge": false,
