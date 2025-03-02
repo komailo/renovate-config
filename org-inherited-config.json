@@ -6,6 +6,7 @@
     ":reviewer(komailo)"
   ],
   "labels": ["dependencies", "renovate"],
+  "postUpdateOptions": ["gomodTidy"],
   "packageRules": [
     {
       "groupName": "No-op updates",
