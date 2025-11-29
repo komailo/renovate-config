@@ -40,6 +40,11 @@
       "automerge": false,
       "bumpVersion": "major",
       "addLabels": ["major"]
+    },
+    {
+      "description": "Bump Helm chart version when dependencies are updated",
+      "matchManagers": ["helmv3", "helm-values"],
+      "bumpVersion": "patch"
     }
   ]
 }
