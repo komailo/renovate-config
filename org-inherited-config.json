@@ -6,6 +6,9 @@
     ":reviewer(komailo)"
   ],
   "labels": ["dependencies", "renovate"],
+  "nix": {
+    "enabled": true
+  },
   "postUpdateOptions": ["gomodTidy"],
   "packageRules": [
     {
