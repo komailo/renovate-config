@@ -12,13 +12,14 @@
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Update _VERSION variables in Dockerfiles",
-      "managerFilePatterns": [
-        "/(^|/|\\.)Dockerfile$/",
-        "/(^|/)Dockerfile\\.[^/]*$/"
+      "description": [
+        "Update variables in Dockerfiles using comment hints"
+      ],
+      "fileMatch": [
+        "(^|/)Dockerfile$"
       ],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))? packageName=(?<packageName>.+?)(?: versioning=(?<versioning>[a-z-]+?))?\\s(?:ENV|ARG) .+?_VERSION=(?<currentValue>.+?)\\s"
+        "# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))?(?: packageName=(?<packageName>.+?))?(?: versioning=(?<versioning>[a-z-]+?))?\\s+(?:ENV|ARG) (?<variableName>[A-Z_]+)=(?<currentValue>[^\\s]+)"
       ]
     }
   ],
