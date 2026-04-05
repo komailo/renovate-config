@@ -9,6 +9,15 @@
   "nix": {
     "enabled": true
   },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["(^|/)Dockerfile$"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[^\\s]+) depName=(?<depName>[^\\s]+)(?:\\s+versioning=(?<versioning>[^\\s]+))?\\s+ARG\\s+(?<packageName>[^=]+)=(?<currentValue>[^\\s]+)"
+      ]
+    }
+  ],
   "postUpdateOptions": ["gomodTidy"],
   "packageRules": [
     {
