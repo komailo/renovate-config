@@ -9,21 +9,6 @@
   "nix": {
     "enabled": true
   },
-  "customManagers": [
-    {
-      "customType": "regex",
-      "description": [
-        "Update variables in Dockerfiles using comment hints"
-      ],
-      "managerFilePatterns": [
-        "/(^|/|\\.)Dockerfile$/",
-        "/(^|/)Dockerfile\\.[^/]*$/"
-      ],
-      "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))?(?: packageName=(?<packageName>.+?))?(?: versioning=(?<versioning>[a-z-]+?))?\\s+(?:ENV|ARG) (?<variableName>[A-Z_]+)=(?<currentValue>[^\\s]+)"
-      ]
-    }
-  ],
   "postUpdateOptions": ["gomodTidy"],
   "packageRules": [
     {
