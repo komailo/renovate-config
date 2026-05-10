@@ -12,8 +12,18 @@
   "postUpdateOptions": ["gomodTidy"],
   "packageRules": [
     {
-      "matchManagers": ["helmv3", "helm-values"],
+      "matchManagers": ["helmv3"],
       "bumpVersion": "patch"
+    },
+    {
+      "matchManagers": ["helm-values"],
+      "bumpVersions": [
+        {
+          "filePatterns": ["{{packageFileDir}}/Chart.{yaml,yml}"],
+          "matchStrings": ["(?:^|\\n)version:\\s+(?<version>[^\\s\\n]+)"],
+          "bumpType": "{{#if isMajor}}major{{else if isMinor}}minor{{else}}patch{{/if}}"
+        }
+      ]
     },
     {
       "groupName": "No-op updates",
