@@ -21,7 +21,7 @@
         {
           "filePatterns": ["{{packageFileDir}}/Chart.{yaml,yml}"],
           "matchStrings": ["(?:^|\\n)version:\\s+(?<version>[^\\s\\n]+)"],
-          "bumpType": "{{#if isMajor}}major{{else if isMinor}}minor{{else}}patch{{/if}}"
+          "bumpType": "{{#if isMajor}}major{{else if isPatch}}patch{{else}}minor{{/if}}"
         }
       ]
     },
