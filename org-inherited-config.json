@@ -10,6 +10,8 @@
     "enabled": true
   },
   "postUpdateOptions": ["gomodTidy"],
+  "separateMajorMinor": true,
+  "separateMinorPatch": true,
   "packageRules": [
     {
       "groupName": "No-op updates",
