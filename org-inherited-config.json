@@ -12,6 +12,10 @@
   "postUpdateOptions": ["gomodTidy"],
   "packageRules": [
     {
+      "matchManagers": ["helmv3", "helm-values"],
+      "bumpVersion": "patch"
+    },
+    {
       "groupName": "No-op updates",
       "matchUpdateTypes": ["digest", "pin", "pinDigest"],
       "automerge": true,
